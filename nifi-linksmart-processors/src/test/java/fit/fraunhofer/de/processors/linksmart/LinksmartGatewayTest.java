@@ -16,7 +16,6 @@
  */
 package fit.fraunhofer.de.processors.linksmart;
 
-import org.apache.nifi.processor.exception.ProcessException;
 import org.apache.nifi.util.MockFlowFile;
 import org.apache.nifi.util.TestRunner;
 import org.apache.nifi.util.TestRunners;
@@ -30,7 +29,7 @@ import static org.junit.Assert.assertEquals;
 
 
 
-public class LinksmartProcessorTest {
+public class LinksmartGatewayTest {
 
     private TestRunner testRunner;
 
@@ -38,7 +37,7 @@ public class LinksmartProcessorTest {
     @Before
     public void init() {
 
-        testRunner = TestRunners.newTestRunner(LinksmartProcessor.class);
+        testRunner = TestRunners.newTestRunner(LinksmartGateway.class);
     }
 
 
@@ -56,7 +55,7 @@ public class LinksmartProcessorTest {
 
         testRunner.run(1, true, false);
 
-        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartProcessor.REL_SUCCESS);
+        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartGateway.REL_SUCCESS);
 
         assertEquals("One flow file should be in REL_SUCCESS", 1, results.size());
     }
@@ -75,7 +74,7 @@ public class LinksmartProcessorTest {
 
         testRunner.run(1, true, false);
 
-        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartProcessor.REL_SUCCESS);
+        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartGateway.REL_SUCCESS);
 
         assertEquals("No flow file should be in REL_SUCCESS", 0, results.size());
 
@@ -95,7 +94,7 @@ public class LinksmartProcessorTest {
 
         testRunner.run(1, true, false);
 
-        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartProcessor.REL_SUCCESS);
+        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartGateway.REL_SUCCESS);
 
         assertEquals("No flow file should be in REL_SUCCESS", 1, results.size());
     }
@@ -114,7 +113,7 @@ public class LinksmartProcessorTest {
 
         testRunner.run(1, true, false);
 
-        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartProcessor.REL_SUCCESS);
+        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartGateway.REL_SUCCESS);
 
         assertEquals("No flow file should be in REL_SUCCESS", 3, results.size());
 
@@ -135,7 +134,7 @@ public class LinksmartProcessorTest {
 
         testRunner.run(1, true, false);
 
-        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartProcessor.REL_SUCCESS);
+        List<MockFlowFile> results = testRunner.getFlowFilesForRelationship(LinksmartGateway.REL_SUCCESS);
 
         assertEquals("No flow file should be in REL_SUCCESS", 1, results.size());
 

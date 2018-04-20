@@ -49,7 +49,7 @@ import java.util.concurrent.TimeUnit;
 @ReadsAttributes({@ReadsAttribute(attribute = "", description = "")})
 @WritesAttributes({@WritesAttribute(attribute = "", description = "")})
 @TriggerSerially  // TODO: consider whether trigger serially could help
-public class LinksmartProcessor extends AbstractProcessor {
+public class LinksmartGateway extends AbstractProcessor {
 
     public static final PropertyDescriptor COMMAND_LINE = new PropertyDescriptor
             .Builder().name("COMMAND_LINE")
