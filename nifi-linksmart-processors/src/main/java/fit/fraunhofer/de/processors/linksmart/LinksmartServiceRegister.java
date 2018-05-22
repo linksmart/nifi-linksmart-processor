@@ -100,8 +100,7 @@ public class LinksmartServiceRegister extends AbstractProcessor {
     public static final PropertyDescriptor BODY = new PropertyDescriptor.Builder()
             .name("BODY")
             .displayName("Service Entry Body")
-            .description("If 'JSON' is chosen, all other data fields will be ignored and the content in this field will " +
-                    "be sent to the Service Catalog directly.")
+            .description("The content to be sent to the Service Catalog")
             .defaultValue("")
             .required(true)
             .addValidator(new JsonValidator())
@@ -162,7 +161,6 @@ public class LinksmartServiceRegister extends AbstractProcessor {
 
     @Override
     public void onTrigger(final ProcessContext context, final ProcessSession session) throws ProcessException {
-        // TODO: pass down file and update service
         if (serviceRegister != null) {
             try {
                 serviceRegister.registerService();
@@ -170,6 +168,7 @@ public class LinksmartServiceRegister extends AbstractProcessor {
                 e.printStackTrace();
             }
         }
+        // TODO: update service
 
         FlowFile flowFile = session.get();
         if(flowFile != null) {
