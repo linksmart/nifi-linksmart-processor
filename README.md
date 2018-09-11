@@ -78,7 +78,8 @@ while True:
 Let's assume the above script is saved as`/scripts/dummy.py` in the same host as the running Nifi instance. Then in the `Command Line` property of the `LinksmartProcessor`, you can fill in `python /scripts/dummy.py`. Run the processor, and the message will be published by the `LinksmartProcessor`.
 
 ## Introduction to LinksmartServiceRegister processor
-This processor is responsible for registering a service entry to the Linksmart Service Catalog. It has the following parameters:
+This processor is responsible for registering a service entry to the Linksmart Service Catalog. It has the following parameters:  
+
 Property Name | Description 
 ------|-----
 Service Catalog URL | The URL of the Linksmart Service Catalog.
