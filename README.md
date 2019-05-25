@@ -1,5 +1,5 @@
 # Linksmart Nifi Processors
-This repository contains processors for Linksmart&copy;. It consists of two processors: the ``LinksmartGateway`` and the ``LinksmartServiceRegister``, which are used to incorporate a Nifi instance into the Linksmart system.
+This repository contains processors for LinkSmart. It consists of two processors: the ``LinksmartGateway`` and the ``LinksmartServiceRegister``, which are used to incorporate a Nifi instance into the Linksmart system.
 
 ## Build Instructions
 There are two ways you can build the program: you can build it and put it into an existing Nifi instance manually, or you can utilize the Dockerfile available to build a Nifi Docker image automatically.
